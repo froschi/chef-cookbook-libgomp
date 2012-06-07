@@ -2,7 +2,7 @@ packages = Array.new
 
 case node[:lsb][:codename]
 when "lucid", "precise"
-  packages = %w/
+  packages |= %w/
     libgomp1
   /
 end
