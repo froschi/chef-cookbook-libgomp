@@ -1,6 +1,11 @@
-packages = %w/
-  libgomp1
-/
+packages = Array.new
+
+case node[:lsb][:codename]
+when "lucid", "precise"
+  packages = %w/
+    libgomp1
+  /
+end
 
 packages.each do |pkg|
   package pkg do
